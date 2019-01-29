@@ -77,6 +77,10 @@ function wrapRoute() {
       responseLogLevel = 'trace'
     } = this.config.seneca;
 
+    if (controller[actionMethodName].wrapped) {
+      return;
+    }
+
     controller[actionMethodName] = async function actionAsync(msg, done) {
       let {
         traceId
@@ -105,6 +109,8 @@ function wrapRoute() {
         return done(null, new Errors.Unknown().response());
       }
     };
+
+    controller[actionMethodName].wrapped = true;
   });
 }
 
