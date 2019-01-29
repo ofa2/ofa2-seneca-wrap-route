@@ -1,6 +1,6 @@
 {
   "name": "@ofa2/ofa2-seneca-wrap-route",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/bundle.cjs.js",
   "module": "dist/bundle.esm.js",
   "license": "MIT",
